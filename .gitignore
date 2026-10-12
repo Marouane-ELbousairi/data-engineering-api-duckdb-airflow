@@ -1,0 +1,20 @@
+cat << 'EOF' > .gitignore
+# Environnement virtuel Python
+airflow/degpt-env/
+degpt-env/
+venv/
+
+# Base de données DuckDB
+*.duckdb
+
+# Logs Airflow et fichiers locaux
+airflow/logs/
+*.log
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+EOF
