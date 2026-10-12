@@ -1,0 +1,24 @@
+[2026-10-10T19:34:23.948+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_api_to_duckdb.load_to_duckdb manual__2026-10-10T19:34:19.892996+00:00 [queued]>
+[2026-10-10T19:34:23.951+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_api_to_duckdb.load_to_duckdb manual__2026-10-10T19:34:19.892996+00:00 [queued]>
+[2026-10-10T19:34:23.951+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2026-10-10T19:34:23.956+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): load_to_duckdb> on 2026-10-10 19:34:19.892996+00:00
+[2026-10-10T19:34:23.958+0000] {standard_task_runner.py:57} INFO - Started process 742 to run task
+[2026-10-10T19:34:23.960+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'ecommerce_api_to_duckdb', 'load_to_duckdb', 'manual__2026-10-10T19:34:19.892996+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpkt_nmnkz']
+[2026-10-10T19:34:23.961+0000] {standard_task_runner.py:85} INFO - Job 21: Subtask load_to_duckdb
+[2026-10-10T19:34:23.967+0000] {logging_mixin.py:151} WARNING - /home/airflow/.local/lib/python3.10/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-10-10T19:34:23.975+0000] {task_command.py:415} INFO - Running <TaskInstance: ecommerce_api_to_duckdb.load_to_duckdb manual__2026-10-10T19:34:19.892996+00:00 [running]> on host 984611e926aa
+[2026-10-10T19:34:24.357+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='ecommerce_api_to_duckdb' AIRFLOW_CTX_TASK_ID='load_to_duckdb' AIRFLOW_CTX_EXECUTION_DATE='2026-10-10T19:34:19.892996+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-10T19:34:19.892996+00:00'
+[2026-10-10T19:34:24.418+0000] {etl_dag.py:74} INFO - Connexion à la base DuckDB : /opt/ecommerce_data.duckdb
+[2026-10-10T19:34:24.431+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_dag.py", line 75, in load_to_duckdb
+    conn = duckdb.connect(DB_PATH)
+_duckdb.IOException: IO Error: Cannot open file "/opt/ecommerce_data.duckdb": Permission denied
+[2026-10-10T19:34:24.435+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=ecommerce_api_to_duckdb, task_id=load_to_duckdb, execution_date=20261010T193419, start_date=20261010T193423, end_date=20261010T193424
+[2026-10-10T19:34:24.440+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 21 for task load_to_duckdb (IO Error: Cannot open file "/opt/ecommerce_data.duckdb": Permission denied; 742)
+[2026-10-10T19:34:24.471+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2026-10-10T19:34:24.490+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

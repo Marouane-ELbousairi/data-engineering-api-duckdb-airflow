@@ -1,0 +1,15 @@
+[2026-10-10T19:34:22.682+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_api_to_duckdb.transform_data manual__2026-10-10T19:34:19.892996+00:00 [queued]>
+[2026-10-10T19:34:22.684+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_api_to_duckdb.transform_data manual__2026-10-10T19:34:19.892996+00:00 [queued]>
+[2026-10-10T19:34:22.685+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2026-10-10T19:34:22.689+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): transform_data> on 2026-10-10 19:34:19.892996+00:00
+[2026-10-10T19:34:22.691+0000] {standard_task_runner.py:57} INFO - Started process 721 to run task
+[2026-10-10T19:34:22.694+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'ecommerce_api_to_duckdb', 'transform_data', 'manual__2026-10-10T19:34:19.892996+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpbn91fyj0']
+[2026-10-10T19:34:22.695+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask transform_data
+[2026-10-10T19:34:22.701+0000] {logging_mixin.py:151} WARNING - /home/airflow/.local/lib/python3.10/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-10-10T19:34:22.709+0000] {task_command.py:415} INFO - Running <TaskInstance: ecommerce_api_to_duckdb.transform_data manual__2026-10-10T19:34:19.892996+00:00 [running]> on host 984611e926aa
+[2026-10-10T19:34:22.797+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='ecommerce_api_to_duckdb' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2026-10-10T19:34:19.892996+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-10T19:34:19.892996+00:00'
+[2026-10-10T19:34:22.804+0000] {etl_dag.py:61} INFO - Transformation réussie. Colonnes traitées : ['id', 'title', 'price', 'category', 'rating_rate', 'rating_count', 'extracted_at']
+[2026-10-10T19:34:22.808+0000] {python.py:194} INFO - Done. Returned value was: None
+[2026-10-10T19:34:22.810+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=ecommerce_api_to_duckdb, task_id=transform_data, execution_date=20261010T193419, start_date=20261010T193422, end_date=20261010T193422
+[2026-10-10T19:34:22.830+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2026-10-10T19:34:22.836+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,30 @@
+services:
+  webserver:
+    image: apache/airflow:2.7.1-python3.10
+    container_name: airflow_webserver
+    restart: always
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - _PIP_ADDITIONAL_REQUIREMENTS=duckdb pandas requests
+    volumes:
+      - .:/opt/airflow
+      - ../ecommerce_data.duckdb:/opt/airflow/ecommerce_data.duckdb
+    ports:
+      - "8080:8080"
+    command: webserver
+
+  scheduler:
+    image: apache/airflow:2.7.1-python3.10
+    container_name: airflow_scheduler
+    restart: always
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - _PIP_ADDITIONAL_REQUIREMENTS=duckdb pandas requests
+    volumes:
+      - .:/opt/airflow
+      - ../ecommerce_data.duckdb:/opt/airflow/ecommerce_data.duckdb
+    command: scheduler

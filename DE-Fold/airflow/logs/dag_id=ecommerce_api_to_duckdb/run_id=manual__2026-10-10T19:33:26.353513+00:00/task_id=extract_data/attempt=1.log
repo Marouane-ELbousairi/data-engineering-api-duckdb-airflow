@@ -1,0 +1,16 @@
+[2026-10-10T19:33:28.470+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_api_to_duckdb.extract_data manual__2026-10-10T19:33:26.353513+00:00 [queued]>
+[2026-10-10T19:33:28.473+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_api_to_duckdb.extract_data manual__2026-10-10T19:33:26.353513+00:00 [queued]>
+[2026-10-10T19:33:28.473+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2026-10-10T19:33:28.483+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): extract_data> on 2026-10-10 19:33:26.353513+00:00
+[2026-10-10T19:33:28.486+0000] {standard_task_runner.py:57} INFO - Started process 594 to run task
+[2026-10-10T19:33:28.489+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'ecommerce_api_to_duckdb', 'extract_data', 'manual__2026-10-10T19:33:26.353513+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmphku5hne7']
+[2026-10-10T19:33:28.490+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask extract_data
+[2026-10-10T19:33:28.500+0000] {logging_mixin.py:151} WARNING - /home/airflow/.local/lib/python3.10/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-10-10T19:33:28.528+0000] {task_command.py:415} INFO - Running <TaskInstance: ecommerce_api_to_duckdb.extract_data manual__2026-10-10T19:33:26.353513+00:00 [running]> on host 984611e926aa
+[2026-10-10T19:33:28.630+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='ecommerce_api_to_duckdb' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2026-10-10T19:33:26.353513+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-10T19:33:26.353513+00:00'
+[2026-10-10T19:33:28.631+0000] {etl_dag.py:30} INFO - Extraction des données depuis l'API : https://fakestoreapi.com/products
+[2026-10-10T19:33:30.613+0000] {etl_dag.py:36} INFO - Nombre de produits extraits : 20
+[2026-10-10T19:33:30.622+0000] {python.py:194} INFO - Done. Returned value was: None
+[2026-10-10T19:33:30.626+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=ecommerce_api_to_duckdb, task_id=extract_data, execution_date=20261010T193326, start_date=20261010T193328, end_date=20261010T193330
+[2026-10-10T19:33:30.653+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2026-10-10T19:33:30.664+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

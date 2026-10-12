@@ -1,0 +1,13 @@
+2026-10-09 19:05:44,354 - ERROR - ❌ Error: IO Error: The file "/Users/marouaneelbousairi/Documents/ProjetData/DE-Fold/ecommerce_data.duckdb" exists, but it is not a valid DuckDB database file!
+2026-10-09 19:47:39,921 - INFO - Connected to DuckDB database.
+2026-10-09 19:47:39,925 - INFO - Created raw_layer schema.
+2026-10-09 19:47:39,925 - INFO - Created refined_layer schema.
+2026-10-09 19:47:39,926 - INFO - Created report_layer schema.
+2026-10-09 19:47:39,931 - INFO - Created raw_layer.sales table.
+2026-10-09 19:47:39,936 - INFO - Closed the database connection.
+2026-10-09 19:52:12,458 - INFO - Connected to DuckDB database.
+2026-10-09 19:52:12,463 - INFO - Created raw_layer schema.
+2026-10-09 19:52:12,463 - INFO - Created refined_layer schema.
+2026-10-09 19:52:12,464 - INFO - Created report_layer schema.
+2026-10-09 19:52:12,468 - INFO - Created raw_layer.sales table.
+2026-10-09 19:52:12,471 - INFO - Closed the database connection.
